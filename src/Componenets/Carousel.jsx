@@ -1,26 +1,23 @@
 import { useState, useEffect } from "react";
 import "./../Styles/Carousel.css";
 
-const Carousel = ({ images }) => {
+function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToNext = () => {
-    const isLastSlide = currentIndex === images.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+  const titles = [
+    "الرئيسة",
+    "ثقافة",
+    "رياضة",
+    "اقتصاد",
+    "اخبار",
+    "فيديو وصور",
+    "اراء",
+  ];
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
 
-  const backgroundImageUrl = images[currentIndex].url;
+  const backgroundImageUrl = images[currentIndex]?.url;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,32 +31,6 @@ const Carousel = ({ images }) => {
     };
   }, [currentIndex, images.length]);
 
-  useEffect(() => {
-    const preloadImages = () => {
-      const imagePromises = images.map((image) => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => {
-            handleImageLoad();
-            resolve();
-          };
-          img.src = image.url;
-        });
-      });
-      Promise.all(imagePromises).then(() => {
-        goToSlide(0);
-      });
-    };
-
-    preloadImages();
-  }, [images]);
-
-  const handleImageLoad = () => {
-    const sliderElement = document.querySelector(".slider");
-    if (sliderElement) {
-      sliderElement.classList.add("loaded");
-    }
-  };
   return (
     <div
       className="sliderStyles"
@@ -100,24 +71,6 @@ const Carousel = ({ images }) => {
           <a href="/about">الرئيسة</a>
         </div>
       </div>
-      {false ? (
-        <div>
-          <div
-            onClick={goToSlide(currentIndex - 1)}
-            className="leftArrowStyles"
-          >
-            ❰
-          </div>
-          <div
-            onClick={goToSlide(currentIndex + 1)}
-            className="rightArrowStyles"
-          >
-            ❱
-          </div>
-        </div>
-      ) : (
-        <></>
-      )}
       <div className="slideStyles"></div>
       <div className="title-desc">
         <span>{images[currentIndex].title}</span>
@@ -141,5 +94,5 @@ const Carousel = ({ images }) => {
       </div>
     </div>
   );
-};
+}
 export default Carousel;
