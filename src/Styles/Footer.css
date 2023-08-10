@@ -1,0 +1,143 @@
+.footer-conatiner {
+  height: fit-content;
+  margin: 1.5rem 40px 2rem 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #e2e2e2;
+  gap: 20px;
+  padding: 20px;
+}
+.left-footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: right;
+  align-items: center;
+}
+.left-info > span {
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+}
+.left-info > p {
+  font-weight: 500;
+  font-size: 17px;
+}
+.right-footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  padding: 10px;
+}
+.right-footer > span {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: 20px;
+}
+.right-info {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 80px;
+}
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: fit-content;
+  gap: 25px;
+}
+.socialMedia > img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.subscribe {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 70%;
+}
+.subscribe > input {
+  width: 50%;
+  height: 45px;
+  margin: 0px;
+  border: none;
+  background-color: #ffffff;
+  text-decoration: none;
+  border-top-left-radius: 0.9rem;
+  border-bottom-left-radius: 0.9rem;
+}
+.subscribeButton {
+  width: 20%;
+  height: 45px;
+  border-top-right-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  background-color: #e64227;
+  color: #ffffff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+  font-weight: 600;
+}
+input:focus {
+  outline: none;
+}
+@media (max-width: 1215px) and (min-width: 730px) and (max-height: 1300px) {
+  .footer-conatiner {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+  .right-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .subscribeButton {
+    font-size: 13px;
+  }
+  .socialMedia > img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .left-info > span {
+    font-size: 22px;
+  }
+  .left-info > p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 730px) and (max-height: 1243px) {
+  .footer-conatiner {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+  .right-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .subscribeButton {
+    font-size: 13px;
+  }
+  .socialMedia > img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .left-info > span {
+    font-size: 22px;
+  }
+  .left-info > p {
+    font-size: 15px;
+  }
+}
