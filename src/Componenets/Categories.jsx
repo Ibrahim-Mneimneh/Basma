@@ -6,31 +6,31 @@ function Categories() {
     {
       name: "اقتصاد",
       visits: 0,
-      imageUrl: "http://localhost:3000/economy.jpg",
+      imageUrl: "/economy.jpg",
       url: "",
     },
     {
       name: "رياضة",
       visits: 0,
-      imageUrl: "http://localhost:3000/sports.jpg",
+      imageUrl: "/sports.jpg",
       url: "",
     },
     {
       name: "اخبار",
       visits: 100,
-      imageUrl: "http://localhost:3000/Carousel-2.jpg",
+      imageUrl: "/Carousel-2.jpg",
       url: "",
     },
     {
       name: "فيديو وصور",
       visits: 0,
-      imageUrl: "http://localhost:3000/Carousel-1.jpg",
+      imageUrl: "/Carousel-1.jpg",
       url: "",
     },
     {
       name: "ثقافة",
       visits: 0,
-      imageUrl: "http://localhost:3000/culture.jpg",
+      imageUrl: "/culture.jpg",
       url: "",
     },
   ]);
