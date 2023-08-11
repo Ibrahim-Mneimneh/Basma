@@ -5,7 +5,7 @@ function MobileCarousel({ images }) {
   const [openMenu, setOpenMenu] = useState(false);
   const backgroundImageUrl = images[currentIndex]?.url;
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? images.length : currentIndex - 1);
+    setCurrentIndex(currentIndex === 0 ? images.length-1 : currentIndex - 1);
   };
 
   const goToNext = () => {
