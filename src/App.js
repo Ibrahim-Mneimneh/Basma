@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Carousel from "./Componenets/Carousel";
 import Footer from "./Componenets/Footer";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 import Advertise from "./Componenets/Advertise";
 import Categories from "./Componenets/Categories";
 import MobileCarousel from "./Componenets/MobileCarousel";
+import Auth from "./Componenets/Auth";
+import BasicModal from "./Componenets/Modal";
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showMenu, setShowMenu] = useState(false);
@@ -60,7 +64,8 @@ function App() {
     <div className="App">
       <div className="home">
         <div className="header">
-          <h3 id="header-option">تسجيل الدخول</h3>
+          <BasicModal />
+
           <img src="/babel.png" alt="Logo" id="logo"></img>
         </div>
         {showMenu ? (

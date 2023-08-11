@@ -12,10 +12,18 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        return User::create([
+        $user = User::create([
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password'))
         ]);
+        
+        $token = $user->createToken('token')->plainTextToken;
+
+        $cookie = cookie('jwt', $token, 60 * 24); //valid for 1 day
+
+        return response([
+            'message' => "Verified"
+        ])->withCookie($cookie);
     }
     
     public function login(Request $request)
