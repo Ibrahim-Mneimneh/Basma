@@ -140,13 +140,13 @@
 }
 .mobile-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: right;
   background-color: #333;
   position: absolute;
   top: 50px;
-  right: 0;
-  width: 100px;
+  right: 200px;
+  width: fit-content;
   border-radius: 0.5rem;
   padding: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
